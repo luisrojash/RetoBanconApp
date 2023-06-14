@@ -1,6 +1,7 @@
 package com.bancom.myapplication.ui.login
 
 
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -37,6 +38,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -49,6 +51,7 @@ import androidx.compose.ui.unit.sp
 import com.bancom.core.theme.deep_purple_500
 import com.bancom.core.theme.grey_1000_b
 import com.bancom.myapplication.R
+import com.bancom.myapplication.ui.listado.ListPersonActivity
 import kotlinx.coroutines.launch
 
 
@@ -100,13 +103,12 @@ fun ViewContainer(modifier: Modifier, viewModel: LoginViewModel) {
         }
     }
 
-    /*
     if (isStatusStartActivity) {
         val context = LocalContext.current
         val intent = Intent(context, ListPersonActivity::class.java)
         intent.putExtra("key", email)
         context.startActivity(intent)
-    }*/
+    }
 }
 
 
