@@ -2,7 +2,7 @@ package com.bancom.data.network
 
 import com.bancom.data.datasource.users.UsersApi
 import com.bancom.data.datasource.users.UsersNetwork
-import com.bancom.domain.repository.users.IUsersNetworkRepository
+import com.bancom.domain.users.IUsersNetworkRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

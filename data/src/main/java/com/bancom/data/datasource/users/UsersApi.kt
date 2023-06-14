@@ -7,6 +7,6 @@ import retrofit2.http.GET
 interface UsersApi {
 
     @GET("users")
-    suspend fun getListUsers(): Response<MutableList<UserListResponse>>
+    suspend fun getListUsers(): Response<List<UserListResponse>>
 
 }

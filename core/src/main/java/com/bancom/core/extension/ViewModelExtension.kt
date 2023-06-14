@@ -38,29 +38,3 @@ fun <T> ViewModel.launchOnIO(
         }
     }
 }
-
-fun <T> ViewModel.launchOnIO(
-    delayTime: Long,
-    doTask: DoTask<T>,
-    result: SuccessResultCancelable<T>,
-    error: ErrorResultCancelable = null,
-): Job {
-    return viewModelScope.launch {
-        delay(delayTime)
-        if (isActive) {
-            try {
-                withContext(Dispatchers.IO) {
-                    doTask()
-                }.also {
-                    when (it) {
-                        is EventResult.Success -> result(it.value, isActive)
-                        is EventResult.Error -> error?.invoke(java.lang.Exception("Error"), isActive)
-                    }
-                }
-            } catch (ex: Exception) {
-                println("Ocurrió un error")
-                error?.invoke(ex, isActive)
-            }
-        }
-    }
-}

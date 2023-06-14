@@ -66,13 +66,6 @@ fun ViewContainer(viewModel: ListPersonViewModel) {
 private fun HomeContent(modifier: Modifier = Modifier, viewModel: ListPersonViewModel) {
     val state = viewModel.usersObserver.observeAsState(initial = emptyArray<UsersEventResult>())
 
-
-    LaunchedEffect(key1 = true) {
-        viewModel.initGetList()
-    }
-
-
-
     when (state.value) {
         is UsersEventResult.GetListUsers -> {
             val resultadoLista = (state.value as UsersEventResult.GetListUsers).usersList
@@ -84,7 +77,7 @@ private fun HomeContent(modifier: Modifier = Modifier, viewModel: ListPersonView
 
 
 @Composable
-fun UsersList(usersList: MutableList<UserDataEntity>, modifier: Modifier) {
+fun UsersList(usersList: List<UserDataEntity>, modifier: Modifier) {
 
     LazyVerticalGrid(
         columns = GridCells.Adaptive(144.dp),
