@@ -41,7 +41,5 @@ class LoginViewModel@Inject constructor(
          delay(4000)
          _isLoading.value = false
          _isStatusStartActivity.value= true
-
-        // _isLoading.value = false
     }
 }

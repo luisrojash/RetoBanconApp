@@ -22,8 +22,11 @@ class ListPersonViewModel @Inject constructor(
     private val _usersLiveData: MutableLiveData<UsersEventResult> = MutableLiveData()
     val usersObserver: LiveData<UsersEventResult> get() = _usersLiveData
 
+    init {
+        initGetList()
+    }
 
-    suspend fun initGetList() {
+     fun initGetList() {
         launchOnIO(
             doTask = {
                 usersUseCase.getListUsers()
