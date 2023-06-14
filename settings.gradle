@@ -14,3 +14,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "RetoBanconApp"
 include ':app'
+include ':data'
+include ':domain'
+include ':core'

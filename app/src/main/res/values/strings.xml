@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RetoBanconApp</string>
+    <string name="loginGoogle">Ingresar con Google\n</string>
+    <string name="title_users">Lista Usuarios</string>
 </resources>
