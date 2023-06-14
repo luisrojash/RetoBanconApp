@@ -6,6 +6,9 @@ import androidx.activity.compose.setContent
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.bancom.myapplication.ui.login.LoginScreen
+import com.bancom.myapplication.ui.login.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -14,8 +17,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            //val loginViewModel = hiltViewModel<LoginViewModel>()
-            //LoginScreen(loginViewModel)
+            val loginViewModel = hiltViewModel<LoginViewModel>()
+            LoginScreen(loginViewModel)
         }
     }
 }
